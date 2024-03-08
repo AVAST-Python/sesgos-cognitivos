@@ -17,8 +17,9 @@ const WINNING_OPTIONS = [
   { option: '2', style: { backgroundColor: 'white' }  },
 ]
 const LOSING_OPTIONS = [
-  { option: '-20', optionSize: 3, style: { backgroundColor: 'red', textColor: 'black' } },
+  { option: '-20', optionSize: 2, style: { backgroundColor: 'red', textColor: 'black' } },
   { option: '21', style: { backgroundColor: 'white' }  },
+  { option: '-20', style: { backgroundColor: 'red', textColor: 'black' } },
   { option: '35', style: { backgroundColor: 'white' } },
   { option: '32', style: { backgroundColor: 'white' }  },
   { option: '14', style: { backgroundColor: 'white' }  },
@@ -69,8 +70,6 @@ function shuffleArray(array) {
 function LossAversion() {
   const [score, setScore] = useState(100)
   const [data] = useState(shuffleArray([WINNING_OPTIONS, LOSING_OPTIONS]))
-
-  console.log(score)
 
   const changeScore = result => {
     setScore(score + Number(result))

@@ -9,9 +9,11 @@ function weightedRandomSelection(options) {
   for (const option of options) {
     accumulatedWeight += option.optionSize || 1;
     if (randomNumber < accumulatedWeight) {
-      return option.option;
+      return option;
     }
   }
+
+
 }
 
 
@@ -23,7 +25,9 @@ function Roulette(props) {
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = weightedRandomSelection(data)
-      setPrizeNumber(newPrizeNumber)
+      const foo = data.indexOf(newPrizeNumber)
+      console.log(newPrizeNumber)
+      setPrizeNumber(foo)
       setMustSpin(true)
     }
   }
@@ -39,7 +43,7 @@ function Roulette(props) {
           disableInitialAnimation={true}
           onStopSpinning={() => {
             setMustSpin(false)
-            onResult?.(prizeNumber)
+            onResult?.(data[prizeNumber].option)
           }}
         />
       </div>

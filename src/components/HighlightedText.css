@@ -1,0 +1,16 @@
+.changed {
+  animation: changeBackground2 0.9s forwards;
+}
+
+@keyframes changeBackground2 {
+  0% {
+    background-color: initial;
+  }
+  /* Adding a step in the middle */
+  50% {
+    background-color: #ffc107;
+  }
+  100% {
+    background-color: initial;
+  }
+}

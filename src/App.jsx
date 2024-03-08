@@ -12,6 +12,7 @@ const routes = [
   { path: 'actividad-1', element: <Anchoring /> },
   { path: 'actividad-2', element: <LossAversion /> },
   { path: 'actividad-3', element: <Confirmation /> },
+  { path: 'respuestas', element: <Respuestas /> },
 ]
 
 const router = createBrowserRouter([{
@@ -26,3 +27,4 @@ function App() {
 }
 
 export default App
+

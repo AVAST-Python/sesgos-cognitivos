@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { ReactSession }  from 'react-client-session'
+
 import './Anchoring.css'
 
 const ANCHOR_LOW = 'low'
 const ANCHOR_HIGH = 'high'
 
-import { ReactSession }  from 'react-client-session'
 
 function Question(props) {
   const { question, onAnswer } = props

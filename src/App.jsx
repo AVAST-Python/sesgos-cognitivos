@@ -6,6 +6,7 @@ import Menu from './pages/Menu'
 import Anchoring from './pages/Anchoring'
 import LossAversion from './pages/LossAversion'
 import Confirmation from './pages/Confirmation'
+import Respuestas from './pages/Respuestas'
 
 const routes = [
   { path: '/', element: <Menu />},

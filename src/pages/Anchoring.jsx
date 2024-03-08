@@ -15,7 +15,7 @@ function Question(props) {
   return (
     <div>
       <p>{question}</p>
-      <input type="text" onChange={e => setAnswer(e.target.value)} required />
+      <input type="number" onChange={e => setAnswer(e.target.value)} required />
       <button onClick={() => onAnswer(answer)}>Responder</button>
     </div>
   )
@@ -77,6 +77,7 @@ function Anchoring() {
 
   const [step, setStep] = useState(1)
   const [mode, setMode] = useState(null)
+  const [value, setValue] = useState(null)
 
   useEffect(() => {
     let mode = ReactSession.get("anchoring-mode")
@@ -90,17 +91,21 @@ function Anchoring() {
   }, [])
 
   function nextStep(value) {
+    setValue(value)
+  }
+
+  function submit(e) {
+    e.preventDefault()
     if (step === 2) ReactSession.set("anchoring-response", value)
-    console.log(value)
     setStep(step + 1)
   }
 
   return (
-    <div>
+    <form onSubmit={submit}>
       { step === 1 && <Step1 mode={mode} onAnswer={nextStep}/> }
       { step === 2 && <Step2 onAnswer={nextStep}/> }
       { step === 3 && <Finished/> }
-    </div>
+    </form>
   )
 }
 

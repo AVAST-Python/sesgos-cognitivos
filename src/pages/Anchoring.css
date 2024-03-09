@@ -1,0 +1,14 @@
+.anchoring p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.anchoring input  {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}

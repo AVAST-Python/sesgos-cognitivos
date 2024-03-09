@@ -16,7 +16,7 @@ function Question(props) {
     <div>
       <p>{question}</p>
       <input type="number" onChange={e => setAnswer(e.target.value)} required />
-      <button onClick={() => onAnswer(answer)}>Responder</button>
+      <button className="btn" onClick={() => onAnswer(answer)}>Responder</button>
     </div>
   )
 }
@@ -68,7 +68,9 @@ function Finished() {
   return (
     <div>
       <p>Has terminado el test</p>
-      <Link to="/">Volver al menú</Link>
+      <Link to="/">
+        <button className="btn btn-primary">Volver al menú</button>
+      </Link>
     </div>
   )
 }
@@ -101,11 +103,15 @@ function Anchoring() {
   }
 
   return (
-    <form onSubmit={submit}>
-      { step === 1 && <Step1 mode={mode} onAnswer={nextStep}/> }
-      { step === 2 && <Step2 onAnswer={nextStep}/> }
-      { step === 3 && <Finished/> }
-    </form>
+    <div className="anchoring">
+      <h1>Test</h1>
+
+      <form onSubmit={submit}>
+        { step === 1 && <Step1 mode={mode} onAnswer={nextStep}/> }
+        { step === 2 && <Step2 onAnswer={nextStep}/> }
+        { step === 3 && <Finished/> }
+      </form>
+    </div>
   )
 }
 

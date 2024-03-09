@@ -2,3 +2,51 @@ label {
   display: grid;
   grid-template-columns: 150px auto;
 }
+
+.confirmation p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.confirmation form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.confirmation input  {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: right;
+  max-width: 100px;
+}
+
+.confirmation .return {
+  margin-top: 50px;
+}
+
+.confirmation .respuesta {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation .respuesta.correcta {
+  color: green;
+}
+
+.confirmation .respuesta.incorrecta {
+  color: red;
+}

@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import './Confirmation.css'
+
 
 function rule(numbers) {
   const nums = numbers.map(n => parseInt(n))
@@ -15,11 +18,11 @@ function rule(numbers) {
 function Respuesta(props){
   const { correcto } = props
   let className = ''
-  if(correcto === true) className = 'correcto'
-  if(correcto === false) className = 'incorrecto'
+  if(correcto === true) className = 'correcta'
+  if(correcto === false) className = 'incorrecta'
 
   return (
-    <div className={className}>
+    <div className={'respuesta ' + className}>
       { correcto === true && 'Sigue la regla' }
       { correcto === false && 'NO sigue la regla' }
     </div>
@@ -45,23 +48,23 @@ function Confirmation() {
   }
 
   return (
-    <div>
+    <div className="confirmation">
+      <h1>Averigua la regla</h1>
       <form onSubmit={check}>
-        <label>
-          Primer número:
+
           <input type="number" value={numbers[0]} onChange={setNumber(0)} required/>
-        </label>
-        <label>
-          Segundo número:
+
           <input type="number" value={numbers[1]} onChange={setNumber(1)} required/>
-        </label>
-        <label>
-          Tercer número:
+
           <input type="number" value={numbers[2]} onChange={setNumber(2)} required/>
-        </label>
-        <button>Test</button>
+
+        <button className="btn btn-primary">Test</button>
       </form>
       <Respuesta correcto={correcto} />
+
+      <Link to="/">
+        <button className="btn btn-success return">Volver al menú</button>
+      </Link>
     </div>
   )
 }

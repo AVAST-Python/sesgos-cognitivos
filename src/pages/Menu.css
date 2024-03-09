@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 20px; */
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.reset {
+  margin-top: 200px;
+}

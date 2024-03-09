@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import './Menu.css'
 
 function Menu() {
 
@@ -14,15 +14,27 @@ function Menu() {
   }
 
   return (
-    <div>
-      <h1>Sesgos cognitivos</h1>
-      <ul>
-        <li><Link to="actividad-1">Actividad 1</Link></li>
-        <li><Link to="actividad-2">Actividad 2</Link></li>
-        <li><Link to="actividad-3">Actividad 3</Link></li>
-      </ul>
-      <button className="reset" onClick={reset}>Resetear</button>
-      <button className="reset" onClick={respuestas}>Respuestas</button>
+    <div className="menu">
+      <h1>Cómo funciona el cerebro</h1>
+      <div className="activities">
+        <Link to="actividad-1">
+          <button className="btn btn-primary ">
+            Actividad 1
+          </button>
+        </Link>
+        <Link to="actividad-2">
+          <button className="btn btn-primary ">
+            Actividad 2
+          </button>
+        </Link>
+        <Link to="actividad-3">
+          <button className="btn btn-primary ">
+            Actividad 3
+          </button>
+        </Link>
+      </div>
+      <button className="btn btn-success respuestas" onClick={respuestas}>Respuestas</button>
+      <button className="btn reset" onClick={reset}>Resetear</button>
     </div>
   )
 }

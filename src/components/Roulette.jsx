@@ -19,20 +19,23 @@ function weightedRandomSelection(options) {
 }
 
 function Roulette(props) {
-  const { data, onResult } = props
+  const { data, disabled } = props
+  const { onTurning, onResult } = props
   const [mustSpin, setMustSpin] = useState(false)
   const [prizeNumber, setPrizeNumber] = useState(0)
 
   const handleSpinClick = () => {
+    onTurning?.()
     if (!mustSpin) {
       const newPrizeNumber = weightedRandomSelection(data)
       const foo = data.indexOf(newPrizeNumber)
-      console.log(newPrizeNumber)
       setPrizeNumber(foo)
       setMustSpin(true)
     }
   }
 
+  console.log(disabled)
+  
   return (
     <div>
       <div className="wheel-container">
@@ -49,7 +52,7 @@ function Roulette(props) {
           }}
         />
       </div>
-      <button className="btn btn-primary" onClick={handleSpinClick}>Girar</button>
+      <button disabled={disabled} className="btn btn-primary" onClick={handleSpinClick}>Girar</button>
     </div >
   )
 }

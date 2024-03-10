@@ -46,17 +46,23 @@ function shuffleArray(array) {
 
 function LossAversion() {
   const [score, setScore] = useState(100)
+  const [turning, setTurning] = useState(false)
   const [data] = useState(shuffleArray([WINNING_OPTIONS, LOSING_OPTIONS]))
+
+  function startTurning() {
+    setTurning(true)
+  }
 
   const changeScore = result => {
     setScore(score + Number(result))
+    setTurning(false)
   }
 
   return (
     <div>
       <HighlightedText text={score}/>
-      <Roulette key='1' data={data[0]} onResult={changeScore}/>
-      <Roulette key='2' data={data[1]} onResult={changeScore}/>
+      <Roulette key='1' disabled={turning} data={data[0]} onTurn={startTurning} onResult={changeScore}/>
+      <Roulette key='2' disabled={turning} data={data[1]} onTurn={startTurning} onResult={changeScore}/>
 
       <Link to="/">
         <button className="btn btn-success return">Volver al menú</button>

@@ -16,7 +16,7 @@ function Question(props) {
     <div>
       <p>{question}</p>
       <input type="number" onChange={e => setAnswer(e.target.value)} required />
-      <button className="btn" onClick={() => onAnswer(answer)}>Responder</button>
+      <button className="btn btn-secondary" onClick={() => onAnswer(answer)}>Responder</button>
     </div>
   )
 }

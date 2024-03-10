@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import './LossAversion.css'
 
 import HighlightedText from '../components/HighlightedText'
@@ -9,22 +11,34 @@ import Roulette from '../components/Roulette'
 
 // Esperanza: 5.4
 const WINNING_OPTIONS = [
-  { option: '3', style: { backgroundColor: 'white' }  },
-  { option: '5', style: { backgroundColor: 'white' }  },
-  { option: '8', style: { backgroundColor: 'white' }  },
-  { option: '9', style: { backgroundColor: 'white' }  },
-  { option: '2', style: { backgroundColor: 'white' }  },
+  { option: '3', style: { backgroundColor: '#99FB99' }  },
+  { option: '5', style: { backgroundColor: '#99FB99' }  },
+  { option: '8', style: { backgroundColor: 'Lime' }  },
+  { option: '9', style: { backgroundColor: 'Lime' }  },
+  { option: '2', style: { backgroundColor: '#CCFFCC' }  },
 ]
 
-// Esperanza: 5.48
+// Esperanza: 5.43
 const LOSING_OPTIONS = [
-  { option: '-20', optionSize: 2, style: { backgroundColor: 'red', textColor: 'black' } },
-  { option: '21', style: { backgroundColor: 'white' }  },
-  { option: '-20', style: { backgroundColor: 'red', textColor: 'black' } },
-  { option: '35', style: { backgroundColor: 'white' } },
-  { option: '32', style: { backgroundColor: 'white' }  },
-  { option: '14', style: { backgroundColor: 'white' }  },
+  { option: '-1', style: { backgroundColor: '#FFCECE', textColor: 'black' } },
+  { option: '21', style: { backgroundColor: '#CCFFCC' }  },
+  { option: '-6', style: { backgroundColor: '#E80022', textColor: 'white' } },
+  { option: '35', style: { backgroundColor: 'Lime' } },
+  { option: '-4', style: { backgroundColor: 'Red', textColor: 'white' } },
+  { option: '-5', style: { backgroundColor: 'red', textColor: 'white' } },
 ]
+
+
+// Good
+// const LOSING_OPTIONS = [
+//   { option: '-10', optionSize: 2, style: { backgroundColor: 'red', textColor: 'white' } },
+//   { option: '21', style: { backgroundColor: 'Lime' }  },
+//   { option: '-5', style: { backgroundColor: '#FF4545', textColor: 'white' } },
+//   { option: '19', style: { backgroundColor: '#CCFFCC' } },
+//   { option: '15', style: { backgroundColor: '#CCFFCC' }  },
+//   { option: '8', style: { backgroundColor: '#F0FFF0' }  },
+// ]
+
 
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -41,9 +55,12 @@ function LossAversion() {
   return (
     <div>
       <HighlightedText text={score}/>
-      <button onClick={() => setScore(score+1)}>Reset</button>
-      <Roulette key='1' data={data[0]} onResult={changeScore}/>,
+      <Roulette key='1' data={data[0]} onResult={changeScore}/>
       <Roulette key='2' data={data[1]} onResult={changeScore}/>
+
+      <Link to="/">
+        <button className="btn btn-success return">Volver al menú</button>
+      </Link>
     </div>
   )
 }

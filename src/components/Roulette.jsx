@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Wheel } from 'react-custom-roulette'
 
+import './Roulette.css'
+
 function weightedRandomSelection(options) {
   const totalWeight = options.reduce((acc, curr) => acc + (curr.optionSize || 1), 0);
   const randomNumber = Math.random() * totalWeight;
@@ -15,7 +17,6 @@ function weightedRandomSelection(options) {
 
 
 }
-
 
 function Roulette(props) {
   const { data, onResult } = props
@@ -41,13 +42,14 @@ function Roulette(props) {
           data={data}
           spinDuration={0.3}
           disableInitialAnimation={true}
+          fontSize={30}
           onStopSpinning={() => {
             setMustSpin(false)
             onResult?.(data[prizeNumber].option)
           }}
         />
       </div>
-      <button onClick={handleSpinClick}>SPIN</button>
+      <button className="btn btn-primary" onClick={handleSpinClick}>Girar</button>
     </div >
   )
 }

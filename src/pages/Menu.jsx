@@ -34,7 +34,7 @@ function Menu() {
         </Link>
       </div>
       <button className="btn btn-success respuestas" onClick={respuestas}>Respuestas</button>
-      <button className="btn reset" onClick={reset}>Resetear</button>
+      <button className="btn btn-secondary reset" onClick={reset}>Resetear</button>
     </div>
   )
 }

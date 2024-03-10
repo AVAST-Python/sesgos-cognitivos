@@ -9,10 +9,10 @@ function rule(numbers) {
   // Todos ascendentes
   const isAsc = nums[0] < nums[1] && nums[1] < nums[2]
   // La suma es par
-  const sum = nums.reduce((a, b) => a + b, 0)
-  const isEven = sum % 2 === 0
+  // const sum = nums.reduce((a, b) => a + b, 0)
+  // const isEven = sum % 2 === 0
 
-  return isAsc && isEven
+  return isAsc // && isEven
 }
 
 function Respuesta(props){

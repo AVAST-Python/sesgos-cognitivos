@@ -27,7 +27,7 @@ function HighlightedText(props) {
 
   return (
     <div className={`highlighted-number ${animate ? 'changed' : ''}`}>
-      {text}
+      Puntos: <span className="score">{text}</span>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ReactSession }  from 'react-client-session'
 
 import './LossAversion.css'
 
@@ -10,7 +11,7 @@ import Roulette from '../components/Roulette'
 // https://stackoverflow.com/questions/67941474/react-custom-roulette-how-to-show-the-roulette-number
 
 // Esperanza: 5.4
-const WINNING_OPTIONS = [
+const SECURE_OPTIONS = [
   { option: '3', style: { backgroundColor: '#99FB99' }  },
   { option: '5', style: { backgroundColor: '#99FB99' }  },
   { option: '8', style: { backgroundColor: 'Lime' }  },
@@ -19,7 +20,7 @@ const WINNING_OPTIONS = [
 ]
 
 // Esperanza: 5.43
-const LOSING_OPTIONS = [
+const RISK_OPTIONS = [
   { option: '-1', style: { backgroundColor: '#FFCECE', textColor: 'black' } },
   { option: '21', style: { backgroundColor: '#CCFFCC' }  },
   { option: '-6', style: { backgroundColor: '#E80022', textColor: 'white' } },
@@ -41,28 +42,28 @@ const LOSING_OPTIONS = [
 
 
 function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+  return array.sort(() => Math.random() - 0.5)
 }
 
 function LossAversion() {
   const [score, setScore] = useState(100)
-  const [turning, setTurning] = useState(false)
-  const [data] = useState(shuffleArray([WINNING_OPTIONS, LOSING_OPTIONS]))
+  const [data] = useState(shuffleArray([SECURE_OPTIONS, RISK_OPTIONS]))
 
-  function startTurning() {
-    setTurning(true)
+  function turn(data) {
+    const type = data === SECURE_OPTIONS ? 'roulete-safe' : 'roulete-risky'
+    const current = Number(ReactSession.get(type)) || 0
+    ReactSession.set(type, current + 1)
   }
 
   const changeScore = result => {
     setScore(score + Number(result))
-    setTurning(false)
   }
 
   return (
     <div>
       <HighlightedText text={score}/>
-      <Roulette key='1' disabled={turning} data={data[0]} onTurn={startTurning} onResult={changeScore}/>
-      <Roulette key='2' disabled={turning} data={data[1]} onTurn={startTurning} onResult={changeScore}/>
+      <Roulette key='1' data={data[0]} onTurn={() => turn(data[0])} onResult={changeScore}/>
+      <Roulette key='2' data={data[1]} onTurn={() => turn(data[1])} onResult={changeScore}/>
 
       <Link to="/">
         <button className="btn btn-success return">Volver al menú</button>

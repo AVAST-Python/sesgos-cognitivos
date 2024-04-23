@@ -24,7 +24,7 @@ function Question(props) {
 function AnchoringQuestionHigh({onAnswer}) {
   return (
     <Question
-      question="¿Cuánto es la mitad de 50.000.000"
+      question="¿Cuánto es la mitad de 50.000.000?"
       onAnswer={onAnswer}
     />
   )

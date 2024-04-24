@@ -65,7 +65,7 @@ function LossAversion() {
       <Roulette key='1' data={data[0]} onTurn={() => turn(data[0])} onResult={changeScore}/>
       <Roulette key='2' data={data[1]} onTurn={() => turn(data[1])} onResult={changeScore}/>
 
-      <Link to="/">
+      <Link to="/" className="return-link">
         <button className="btn btn-success return">Volver al menú</button>
       </Link>
     </div>

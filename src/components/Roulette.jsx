@@ -35,7 +35,7 @@ function Roulette(props) {
   }
 
   return (
-    <div>
+    <div className="wheel">
       <div className="wheel-container">
         <Wheel
           mustStartSpinning={mustSpin}

@@ -4,6 +4,46 @@
 
 ![Logo de AVAST](./img/logo.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 
+--
+
+# Web de actividades
+
+URL de deployment
+
+![Menu de la aplicacion](./img/menu.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
+
+
+--
+
+# Actividad 1
+
+- Se mostrarán dos preguntas consecutivas
+- Tienes que contestar a ambas preguntas
+- No va a mostrar el resultado
+
+--
+
+# Actividad 2
+
+- Aparecerán dos ruletas
+- El objetivo es conseguir el mayor número de puntos
+- Puedes lanzar sólo una a la vez
+
+--
+
+# Actividad 3
+
+- Hay una regla acerca de tres números
+- Tu objetivo es averiguar la regla
+- La aplicación te dice si los números cumplen o no la regla
+
+--
+
+Esta página está en blanco intencionadamente
+
+--
+
+Esta página está en blanco intencionadamente
 
 --
 
@@ -27,7 +67,9 @@ En la segunda pregunta, las personas con opción a) han respondido una cantidad 
 ## Sesgo de anclaje
 
 **Es la tendencia a juzgar una situación con base en información recibida recientemente sobre ella**
+Este efecto describe la tendencia de las personas a quedarse más con la primera información que se les ofrece
 
+- Anclaje numérico: Nos influencian números arbitrarios a los que estámos expuestos antes de tomar una decisión
 - Es más frecuente en decisiones rápidas o de estrés
 - Ejemplo: precio en las rebajas
 - Ejemplo: entrevistas de trabajo
@@ -37,6 +79,7 @@ En la segunda pregunta, las personas con opción a) han respondido una cantidad 
 # Predicción Actividad 2
 
 **Habéis girado más la ruleta que estaba toda en verde**
+<!-- .element style="text-align:center" -->
 
 ---
 
@@ -58,6 +101,7 @@ Ejemplos:
 # Predicción Actividad 3
 
 **Nadie ha acertado la regla**
+<!-- .element style="text-align:center" -->
 
 ---
 
@@ -72,37 +116,22 @@ Ejemplos:
 
 ---
 
-#
+# Es sólo la punta del iceberg
 
-Hay muchos más:
+Hay muchos más sesgos: https://es.wikipedia.org/wiki/Anexo:Sesgos_cognitivos
 
-https://es.wikipedia.org/wiki/Anexo:Sesgos_cognitivos
-
+- **Efecto Ikea**: Valoramos más aquellos artículos que hacemos nosotros mismos que los que ya vienen hechos
+- **Efecto Dunning-Kruger**: Tendencia de los individuos incompetentes a sobreestimar su propia habilidad, y de los individuos altamente competentes a sobreestimar la habilidad de otros individuos.
 - **Sesgo retrospectivo o sesgo a posteriori**: Inclinación a ver los eventos pretéritos como predecibles.
 - **Error de atribución**: Tendencia de atribuir las causas de la conducta de otras personas a su carácter moral y no a factores situacionales
-- **Sesgo de autoservicio**: es la tendencia a reclamar más responsabilidad para los éxitos que por los fallos.
-- **Sesgo de falso consenso**: es la tendencia experimentalmente corroborada de creer que las propias opiniones, creencias, valores y hábitos están más extendidos entre el resto de la población de lo que realmente lo están.
-- **Efecto Dunning-Kruger**: Es la tendencia de los individuos incompetentes a sobreestimar su propia habilidad, y de los individuos altamente competentes a sobreestimar la habilidad de otros individuos. El resultado es que los incompetentes son incapaces de reconocer su ineptitud para desarrollar una tarea, y los competentes tienden a suponer que todos pueden acometerla con la facilidad con la que ellos pueden desarrollarla.
-
+- **Sesgo de autoservicio**: Tendencia a reclamar más responsabilidad para los éxitos que por los fallos.
+- **Sesgo de falso consenso**: Tendencia a creer que las propias opiniones, creencias, valores y hábitos están más extendidos entre el resto de la población de lo que realmente lo están.
+- ...
 
 ---
 
 # Conclusión
 
-- Somos unos putos inútiles
+- Somos unos inútiles
 - Si el coche se va hacia la derecha, corrige poniendo el volante hacia la izquierda
 - La ciencia intenta evitar todo esto
-
----
-
-
-
-
-
-https://ceciliacorespsicologa.es/50-sesgos-cognitivos/
-
-https://es.wikipedia.org/wiki/Sesgo_cognitivo#:~:text=Un%20sesgo%20cognitivo%20es%20un,informaci%C3%B3n%20disponible%2C%20aunque%20los%20datos
-
-
-https://es.wikipedia.org/wiki/Anexo:Sesgos_cognitivos
-

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ReactSession }  from 'react-client-session'
+import { useNavigate } from 'react-router-dom'
 
 import './LossAversion.css'
 
@@ -48,26 +48,52 @@ function shuffleArray(array) {
 function LossAversion() {
   const [score, setScore] = useState(100)
   const [data] = useState(shuffleArray([SECURE_OPTIONS, RISK_OPTIONS]))
+  const [turning, setTurning] = useState(false)
+
+  const navigate = useNavigate()
 
   function turn(data) {
+    console.log('turn')
+    setTurning(true)
     const type = data === SECURE_OPTIONS ? 'roulete-safe' : 'roulete-risky'
     const current = Number(ReactSession.get(type)) || 0
     ReactSession.set(type, current + 1)
   }
 
-  const changeScore = result => {
+  function onResult(result) {
+    console.log('result', result)
     setScore(score + Number(result))
+    setTurning(false)
   }
+
+  function returnToMenu() {
+    console.log('return')
+    navigate('/')
+  }
+
 
   return (
     <div>
       <HighlightedText text={score}/>
-      <Roulette key='1' data={data[0]} onTurn={() => turn(data[0])} onResult={changeScore}/>
-      <Roulette key='2' data={data[1]} onTurn={() => turn(data[1])} onResult={changeScore}/>
+      <Roulette key='1'
+        data={data[0]}
+        onTurn={() => turn(data[0])}
+        onResult={onResult}
+        enabled={!turning}
+      />
+      <Roulette key='2'
+        data={data[1]}
+        onTurn={() => turn(data[1])}
+        onResult={onResult}
+        enabled={!turning}
+      />
 
-      <Link to="/" className="return-link">
-        <button className="btn btn-success return">Volver al menú</button>
-      </Link>
+      <button
+        className="btn btn-success return"
+        onClick={returnToMenu}
+      >
+        Volver al menú
+      </button>
     </div>
   )
 }

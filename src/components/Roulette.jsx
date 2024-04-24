@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Wheel } from 'react-custom-roulette'
 
 import './Roulette.css'
@@ -21,6 +21,7 @@ function weightedRandomSelection(options) {
 function Roulette(props) {
   const { data } = props
   const { onTurn, onResult } = props
+  const { enabled } = props
   const [mustSpin, setMustSpin] = useState(false)
   const [prizeNumber, setPrizeNumber] = useState(0)
 
@@ -34,23 +35,33 @@ function Roulette(props) {
     }
   }
 
+  const wheel = useMemo(() => {
+    return <Wheel
+      mustStartSpinning={mustSpin}
+      prizeNumber={prizeNumber}
+      data={data}
+      spinDuration={0.3}
+      disableInitialAnimation={true}
+      fontSize={30}
+      onStopSpinning={() => {
+        setMustSpin(false)
+        onResult?.(data[prizeNumber].option)
+      }}
+    />
+  }, [data, mustSpin, prizeNumber, onResult])
+
   return (
     <div className="wheel">
       <div className="wheel-container">
-        <Wheel
-          mustStartSpinning={mustSpin}
-          prizeNumber={prizeNumber}
-          data={data}
-          spinDuration={0.3}
-          disableInitialAnimation={true}
-          fontSize={30}
-          onStopSpinning={() => {
-            setMustSpin(false)
-            onResult?.(data[prizeNumber].option)
-          }}
-        />
+        { wheel }
       </div>
-      <button className="btn btn-primary" onClick={handleSpinClick}>Girar</button>
+      <button
+        className="btn btn-primary"
+        onClick={handleSpinClick}
+        disabled={!enabled}
+      >
+          Girar
+      </button>
     </div >
   )
 }

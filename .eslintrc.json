@@ -18,7 +18,7 @@
   "settings": {
     "react": { "version": "18.2" }
   },
-  "ignorePatterns": ["dist", ".eslintrc.cjs"],
+  "ignorePatterns": ["dist", ".eslintrc.cjs", "presentacion/**/*"],
   "noInlineConfig": true,
   "reportUnusedDisableDirectives": true,
   "plugins": ["react-refresh"],

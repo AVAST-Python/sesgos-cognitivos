@@ -45,7 +45,16 @@ Esta página está en blanco intencionadamente
 
 Esta página está en blanco intencionadamente
 
---
+---
+
+Pensáis que habéis hecho lo que habéis querido, pero...
+<!-- .element style="text-align:center" -->
+![Menu de la aplicacion](./img/emosido_engañado.jpg) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
+
+Para demostrarlo voy a hacer predicciones sobre lo que habéis hecho.
+<!-- .element style="text-align:center" -->
+
+---
 
 # Predicción Actividad 1
 

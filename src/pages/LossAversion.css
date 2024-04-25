@@ -1,3 +1,9 @@
+.loss-aversion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .return {
   margin-top: 20px;
 }

@@ -73,7 +73,7 @@ function LossAversion() {
 
 
   return (
-    <div>
+    <div className='loss-aversion'>
       <HighlightedText text={score}/>
       <Roulette key='1'
         data={data[0]}

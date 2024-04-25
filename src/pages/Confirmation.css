@@ -3,6 +3,10 @@ label {
   grid-template-columns: 150px auto;
 }
 
+.confirmation {
+  text-align: center;
+}
+
 .confirmation p {
   font-size: 1.2rem;
   font-weight: bold;

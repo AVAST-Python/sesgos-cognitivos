@@ -8,7 +8,7 @@
 
 # Web de actividades
 
-URL de deployment
+[https://comofuncionaelcerebro.netlify.app](https://comofuncionaelcerebro.netlify.app)
 
 ![Menu de la aplicacion](./img/menu.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 

@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.anchoring h1 {
+  text-align: center;
+}
+
 .anchoring p {
   font-size: 1.2rem;
   font-weight: bold;

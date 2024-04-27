@@ -4,11 +4,12 @@
 
 ![Logo de AVAST](./img/logo.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 
---
+---
 
 # Web de actividades
 
 [https://comofuncionaelcerebro.netlify.app](https://comofuncionaelcerebro.netlify.app)
+<!-- .element style="text-align:center" -->
 
 ![Menu de la aplicacion](./img/menu.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
 

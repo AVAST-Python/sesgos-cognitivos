@@ -98,10 +98,7 @@ function Anchoring() {
 
   function submit(e) {
     e.preventDefault()
-    if (step === 2) {
-      console.log('setting response')
-      ReactSession.set("anchoring-response", value)
-    }
+    if (step === 2) ReactSession.set("anchoring-response", value)
     setStep(step + 1)
   }
 

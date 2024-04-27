@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Respuestas() {
 
   const anchoringMode = ReactSession.get("anchoring-mode") || 'sin datos'
-  const anchoringResponse = ReactSession.set("anchoring-response") || 'sin datos'
+  const anchoringResponse = ReactSession.get("anchoring-response") || 'sin datos'
 
   const rouleteSafe = ReactSession.get('roulete-safe') || 0
   const rouleteRisky = ReactSession.get('roulete-risky') || 0

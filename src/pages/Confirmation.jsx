@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ReactSession }  from 'react-client-session'
 
 import './Confirmation.css'
 
@@ -28,6 +29,31 @@ function Respuesta(props){
     </div>
   )
 }
+
+
+function Regla() {
+  const [answer, setAnswer] = useState(ReactSession.get("regla") || '')
+
+  function changeContent(e){
+    setAnswer(e.target.value)
+    ReactSession.set("regla", e.target.value)
+  }
+
+  return (
+    <div>
+      {/* <input type="text" value={answer} onChange={changeContent} required /> */}
+
+      <textarea
+        value={answer}
+        onChange={changeContent}
+        placeholder="Introducte la regla aquí..."
+        rows="2"
+        cols="0"
+      />
+    </div>
+  )
+}
+
 function Confirmation() {
 
   const [numbers, setNumbers] = useState(['','',''])
@@ -61,6 +87,8 @@ function Confirmation() {
         <button className="btn btn-primary">Test</button>
       </form>
       <Respuesta correcto={correcto} />
+
+      <Regla />
 
       <Link to="/">
         <button className="btn btn-success return">Volver al menú</button>

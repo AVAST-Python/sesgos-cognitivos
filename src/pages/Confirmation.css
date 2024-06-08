@@ -21,7 +21,7 @@ label {
 
 }
 
-.confirmation input  {
+.confirmation form input  {
   width: 100%;
   padding: 10px;
   font-size: 1.5rem;
@@ -53,4 +53,13 @@ label {
 
 .confirmation .respuesta.incorrecta {
   color: red;
+}
+
+.confirmation textarea {
+  width: 100%;
+  padding: 3px;
+  font-size: 1rem;
+  /* font-weight: bold; */
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
